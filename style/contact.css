@@ -1,0 +1,312 @@
+
+.step { 
+    display: none; 
+    padding: 1rem 1rem 1rem;
+}
+.step.active { 
+    display: block; 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+button { 
+    /* width:100%; */
+    margin: 1rem 0 0 0;
+    padding: 0.5rem 1rem; 
+
+    /* width:100%; */
+    width:300px;
+
+    
+    font-family: "Lato-blackitalic";
+    font-size:1.5rem;
+    padding: 9px;
+
+    text-shadow: 2px 3px 5px rgb(0, 0, 0); 
+    text-align: center;
+    border:none;
+    box-shadow: 2px 2px 2px 2px rgba(44, 42, 42, 0.75);
+    color:white;
+
+    background:linear-gradient(270deg,rgb(4, 63, 65),rgb(8, 93, 95),rgb(4, 60, 62)) !important;
+    /* background:linear-gradient(270deg,rgb(253, 140, 1), rgb(253, 156, 1), rgb(253, 140, 1)) !important; */
+
+    /* background:rgb(253, 156, 1) !important; */
+    border-radius: 3px;
+}
+input[type="text"], input[type="email"], input[type="number"],input[type="textarea"],textarea, select { 
+    /* width: 100%; */
+    width:280px;
+    height:25px;
+    border:3px solid rgb(4, 53, 51);
+    border-radius: 3px;
+    font-size:1.3rem;
+    padding: 0.5rem; 
+    margin-top: 0.5rem; 
+    font-family: 'Lato-italic';
+    
+}
+textarea{
+    
+    height:auto;
+}
+select{
+    width:300px;
+
+    height:45px;
+    /* width:100%; */
+/* background:linear-gradient(130deg,rgb(120, 124, 124),rgb(235, 238, 238),rgb(120, 124, 124)); */
+    /* background:linear-gradient(70deg,rgb(209, 210, 210),rgb(235, 238, 238),rgb(179, 181, 181)); */
+
+}
+input:focus{
+    outline:3px solid rgb(255, 179, 0);
+}
+.prev-btn{
+
+    border-radius: 3px 3px 1rem 1rem;
+    background:linear-gradient(270deg,#dd3434,#c81c1c,#b40c0c) !important;
+
+
+
+
+
+}
+button:active{
+    /* padding:9px; */
+    padding: 8px;
+    margin-top: 18px;
+    
+    box-shadow:none;
+}
+button:hover{
+    background:linear-gradient(270deg,#bc2b2b,#9f1515,#8e0808) !important;
+    background:linear-gradient(270deg,rgb(253, 140, 1), rgb(253, 156, 1), rgb(253, 140, 1)) !important;
+
+}
+
+.step.active{
+    display:flex; 
+    flex-direction: column;
+}
+
+.step p {
+    width:80%;
+    text-align: center;
+    font-size:2rem ;
+    line-height:2.5rem;
+    padding:5px;
+    position:relative;
+    /* margin-bottom: 5rem; */
+    color:#b10a0a;
+    font-family: 'Lato-blackitalic';
+}
+
+.form-final-msg h1{
+    text-align: center;
+    font-size: 3rem;
+    margin:0;
+    color:#064042;
+    font-family: 'Lato-blackitalic'; 
+}
+.form-final-msg h1 span{
+    color:#b10a0a;
+}
+
+
+
+
+.contact-card{
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    max-width:100%;
+    gap:5rem;
+    margin-bottom:2rem;
+    padding: 2rem;
+
+    margin-top:0;
+    overflow-x:hidden;
+    border-top:10px dashed rgb(164, 6, 6);
+    border-bottom:10px dashed rgb(164, 6, 6);
+
+}
+/*
+flex-grow: 1 → peut s’agrandir si la place le permet.
+flex-shrink: 1 → peut se réduire si la place manque.
+flex-basis: 200px → sa largeur de base est 200px.
+*/
+
+.contact-card-text{
+
+    flex: 0 0 45%; 
+    max-width:45%;
+    background: none;
+    color:#165049;
+    box-sizing: border-box;
+
+    padding-bottom: 2rem;
+    border-radius:5px;
+    border: none;
+}
+
+.card-img-container-contact{
+    flex: 0 0 48%; 
+    max-width:48%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+}
+.container-contact-p{
+    max-width: 90%;
+    margin: 0px;
+    padding: 0;
+    text-align: center;
+
+    width:600px;
+    font-family: 'Lato-black';
+    color:#165049;
+    font-weight: none;
+    font-size:1.4rem;
+
+
+
+}
+.container-contact-p span{
+    font-weight: bold;
+    max-width: 100%;
+    color:rgb(164, 6, 6);
+}
+
+.contact-card-img{
+    width:80%;
+    min-width:100%;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+@media(min-width: 1001px){
+    .contact-card-img{
+        object-fit: cover;
+        object-position: center;
+        width:100%;
+        width:40%;
+
+        max-width: 200px;
+        min-width: none;
+        height:35rem;
+        height: 40%;
+    }
+    .card-img-container-contact{
+        max-width:40%;
+    }
+}
+
+@media(max-width:1000px){
+    .contact-card-text{
+        background-color: white;
+        width:100%;
+        min-width: none;
+        background: none;
+    }
+    .card-img-container-contact{
+        max-width:90%;
+        min-width: 80%;
+        width: 80%;
+        
+    }
+    .step.active{
+        max-width:90%;
+        min-width: 80%;
+        width: 80% !important;
+        
+    }
+    .step.active p{
+        width: 80vw !important;
+    }
+    .container-contact-p{
+        min-width:90vw;
+    }
+    .contact-card{
+        gap:1rem;
+    }
+
+}
+
+@media(min-width:700px){
+    .ecrito-bottom-service p{
+        width:60% !important;
+    }
+}
+@media(max-width:600px){
+    .contact-card-text{
+        border: none;
+    }
+    .step.active p{
+        font-size: 1.8rem !important;
+    }
+    .contact-card{
+        margin:0 1rem 2rem 1rem;
+        overflow-x:hidden;
+        padding:30px 5px 10px 5px;
+    }
+}
+
+.service-first{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Pancarte post acceuil */
+.accroche{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin-bottom:1rem;
+}
+.accroche-large{
+
+    max-width: 70%;
+    text-align:center;
+    font-family: 'Lato-black';
+    color:#165049;
+
+    font-weight: none;
+    font-size:1.4rem;
+    position:relative;
+}
+.accroche-large h2{
+    font-family: "Lato-blackitalic";
+    color:rgb(164, 6, 6);
+}
+
+.second-accroche-large{
+    margin-top: 2rem;;
+}
+.accroche-large span{
+    font-weight: bold;
+    max-width: 100%;
+    color:rgb(164, 6, 6);
+}
+
+.accroche-large h2::after{
+    position:absolute;
+    content:"";
+    width:8rem !important;
+
+    top:5px;
+    left: calc(50% - 4rem);
+    padding:2px;
+    background-color:#165049;
+}

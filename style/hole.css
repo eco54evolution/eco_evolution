@@ -1,0 +1,177 @@
+
+
+.hole.service{
+    background: url("../images/renovation.jpg");
+
+    background-position: center center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    will-change: transform;
+    min-height: 50vh;
+    clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
+    margin-top:0 !important;
+}
+
+.hole-service-bottom{
+    background: url("../images/isolation-2.jpg");
+    min-height: 50vh;
+    
+    background-repeat: no-repeat;
+    background-attachment:scroll ;
+    background-size:cover !important;
+    clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-position: center center ;
+    will-change: transform;
+}
+
+.slogan{
+    display: flex;
+    margin-left:8vw;
+    
+    flex-direction: column;
+    justify-content: flex-start;
+
+    will-change: transform;
+}
+.slogan h1{
+
+    color:#ffffff;
+    font-size:8rem;
+    max-width: 80%;
+    font-family: 'Lato-blackitalic';
+
+    text-shadow: 3px 6px 20px #0a0808;
+
+    margin-top:50px;
+    margin-bottom: 3rem;
+    opacity: 1;
+
+    margin-bottom: 100px;
+    margin-top: 150px;
+    will-change: transform;
+    
+}
+
+@media(min-width:1150px){
+    .pancarte{
+        margin-bottom:3rem;
+    }
+    .hole{    
+        background-position: center center;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        will-change: transform;
+    }
+    .hole.service{
+        min-height: 70vh;
+    }
+}
+
+@media(max-width:1150px){
+    .slogan h1{
+        font-size:7rem;    
+    }
+}
+@media(max-width:800px){
+    .hole{
+        background-size: 250% !important;
+        background-size: cover !important;
+    }
+    .hole.service{
+        background-size:150% !important;
+    }
+    .hole-service-bottom{
+        background-size: 150% !important;
+        min-height: 40vh;
+    }
+    .slogan h1{
+        font-size:4rem;    
+    }
+}
+
+@media(max-width:600px){
+    .slogan h1{
+        font-size:3rem;    
+    }
+}
+
+@media(max-width:500px){
+    .card{
+        min-width: 75vw;
+    }
+    .hole.service{
+        background-size:200% !important;
+    }
+
+}
+.button{
+    max-width:11rem;
+    padding:16px;
+    padding-right:30px;
+    padding-left:30px;
+
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:20px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+
+    border-radius:2px;
+    background: linear-gradient(45deg,#ffb300, #fdc951 , #ffe3a2);
+    color:#165049;
+    box-shadow: 2px 2px 2px 2px rgba(44, 42, 42, 0.75);
+    cursor: pointer;
+}
+
+.button:active{
+    margin-top: 7px ;
+    margin-left:9px;
+    margin-right:7px;
+
+    padding:15px;
+    padding-right:28px;
+    padding-left:28px;
+
+    transition: O.5s;
+    box-shadow: none;
+}
+
+.shadow{
+    
+    padding-top:6px;
+    padding-bottom:6px;
+    padding-left:13px;
+    padding-right:13px;
+    margin-bottom:5px;
+
+    border-radius:1px;
+    background: linear-gradient(90deg,#165049,#165049,  #41988e);  
+    border-radius:0px;
+    cursor:pointer;
+    color:white;
+
+    transition:box-shadow 0.2s;
+    box-shadow: 2px 2px 3px rgba(39, 37, 37,0.75);
+    font-size: 1.5rem;
+    transition: opacity 0.3s;
+}
+.shadow:hover{
+    opacity:0.8;
+}
+.shadow:active{
+    margin-top: 2px;
+    margin-left: 2px;
+    box-shadow:none;
+    opacity:0.8;
+}
+
