@@ -3,6 +3,14 @@ const steps = form.querySelectorAll('.step');
 let stepHistory = [];
 let reponses = {};
 
+const progressBar = document.querySelectorAll(".progress-bar");
+const progressBarContainer = document.querySelectorAll(".progress-bar-container");
+
+let nbReponse = 1;
+let totalReponses = 13;
+
+
+
 form.addEventListener('keydown', function(e){
     if(e.key === "Enter"){
       const currentStep = e.target.closest('.step');
@@ -45,74 +53,101 @@ function checkRequiredField(currentStep){
 form.addEventListener('click', function(e){
 
 
-    const currentStep = e.target.closest('.step');
+    let stepNum = 0;
+    let currentStep = e.target.closest('.step');
     allValid = true;
     //Pour ne pas contrôler lorsqu'on passe d'un input à l'autre
     if(!e.target.matches('.prev-btn') && !(e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.tagName === "SELECT")){ //Pas la peine de vérifier si le bouton est prev
         allValid = checkRequiredField(currentStep);
     }
   if(allValid){
-  // Bouton Suivant
-  if(e.target.matches('button[data-next]')){
-    e.preventDefault();
-    const nextStepNum = e.target.dataset.next;
-    const stepNum = currentStep.dataset.step;
+    // Bouton Suivant
+    if(e.target.matches('button[data-next]')){
+      e.preventDefault();
+      
+      let nextStepNum = e.target.dataset.next;
+      let stepNum = currentStep.dataset.step;
+      if (["5A", "5B", "5C"].includes(stepNum)) {
+        nbReponse+=0.5; //for progress Bar
+        
+        progressBar.forEach(bar => {
+          bar.style.width =`${nbReponse/totalReponses*100}%`;
+        });
+        nbReponse-=0.5;
+      }else{
+        nbReponse+=1; //for progress Bar
+        progressBar.forEach(bar => {
+          bar.style.width =`${nbReponse/totalReponses*100}%`;
+        });
+      }
+      
 
-    // Vérifier si le step contient un input 
-    
-    const inputs = currentStep.querySelectorAll('input, select, textarea');
-    if(inputs.length > 0){
-      inputs.forEach(input => {
-        reponses[input.name] = input.value.trim();
-      });
-    } else {  // Sinon on prend le texte du bouton cliqué (comme avant)
-      reponses[stepNum] = e.target.textContent.trim();
+      // Vérifier si le step contient un input 
+      
+      const inputs = currentStep.querySelectorAll('input, select, textarea');
+      if(inputs.length > 0){
+        inputs.forEach(input => {
+          reponses[input.name] = input.value.trim();
+        });
+      } else {  // Sinon on prend le texte du bouton cliqué (comme avant)
+        reponses[stepNum] = e.target.textContent.trim();
+      }
+
+      // Sauvegarder l'étape
+      stepHistory.push(stepNum);
+
+      // Navigation
+      currentStep.classList.remove('active');
+
+      const nextStep = form.querySelector(`.step[data-step="${nextStepNum}"]`);
+      if(nextStep){
+          nextStep.classList.add('active');
+      } 
     }
 
-    // Sauvegarder l'étape
-    stepHistory.push(stepNum);
-
-    // Navigation
-    currentStep.classList.remove('active');
-
-    const nextStep = form.querySelector(`.step[data-step="${nextStepNum}"]`);
-    if(nextStep){
-        nextStep.classList.add('active');
-    } 
-  }
-
-  // Bouton Précédent 
-  if(e.target.matches('.prev-btn')){
-    e.preventDefault();
-    const prevStepNum = stepHistory.pop();
-    if(prevStepNum){
-      currentStep.classList.remove('active');
-      const prevStep = form.querySelector(`.step[data-step="${prevStepNum}"]`);
-      if(prevStep) {
-        prevStep.classList.add('active');
-
-        // Restaurer ancienne valeur
-        if(reponses[prevStepNum]){
-          const input = prevStep.querySelector('input, select, textarea');
-          if(input){    // Restaurer valeur saisie
-            input.value = reponses[prevStepNum];
-          } else {  // Restaurer le bouton sélectionné
-            const buttons = prevStep.querySelectorAll('button[data-next]');
-            buttons.forEach(btn => {
-              if(btn.textContent.trim() === reponses[prevStepNum]){
-                btn.classList.add('selected');
-              } else {
-                btn.classList.remove('selected');
-              }
+    // Bouton Précédent 
+    if(e.target.matches('.prev-btn')){
+      e.preventDefault();
+      const prevStepNum = stepHistory.pop();
+      if(prevStepNum){
+          if (!(["5A", "5B", "5C"].includes(prevStepNum))) {
+            nbReponse-=1;
+            progressBar.forEach(bar => {
+              bar.style.width =`${nbReponse/totalReponses*100}%`;
             });
+          }else{
+            progressBar.forEach(bar => {
+          bar.style.width =`${nbReponse/totalReponses*100}%`;
+        });
+          }
+        
+        currentStep.classList.remove('active');
+        const prevStep = form.querySelector(`.step[data-step="${prevStepNum}"]`);
+        if(prevStep) {
+          prevStep.classList.add('active');
+
+          // Restaurer ancienne valeur
+          if(reponses[prevStepNum]){
+            const input = prevStep.querySelector('input, select, textarea');
+            if(input){    // Restaurer valeur saisie
+              input.value = reponses[prevStepNum];
+            } else {  // Restaurer le bouton sélectionné
+              const buttons = prevStep.querySelectorAll('button[data-next]');
+              buttons.forEach(btn => {
+                if(btn.textContent.trim() === reponses[prevStepNum]){
+                  btn.classList.add('selected');
+                } else {
+                  btn.classList.remove('selected');
+                }
+              });
+            }
           }
         }
       }
+
     }
-  }
 
   }
-
 
 });
 
@@ -129,6 +164,12 @@ form.addEventListener('submit', function(e){
       reponses[input.name] = input.value;
     }
   });
+  progressBar.forEach(bar => {
+          bar.style.width = "0%";
+        });
+  progressBarContainer.forEach(barContainer => {
+          barContainer.style.display = "none";
+        });
 
   // Envoie du formulaire ici
   currentStep.classList.remove('active');
