@@ -8,6 +8,7 @@ const logo = document.getElementById("logo");
 const homeDevis = document.getElementById("home-devis");
 const navLogo = document.getElementById("nav-logo");
 
+
 const menuSrc = "images/barre-de-menu-2.png"
 const cancelSrc = "images/cancel.png";
 const srcLogo = "images/ecoevolution-logo-ver4-new.png";
