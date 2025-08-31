@@ -11,8 +11,8 @@ const navLogo = document.getElementById("nav-logo");
 
 const menuSrc = "images/barre-de-menu-2.png"
 const cancelSrc = "images/cancel.png";
-const srcLogo = "images/ecoevolution-logo-ver4-new.png";
-const srcBlackLogo = "images/ecoevolution-logo-green-red-white.png";
+const srcLogo = "images/ecoevolution-logo-ver4-new.webp";
+const srcBlackLogo = "images/ecoevolution-logo-green-red-white.webp";
 
 
 menu.addEventListener("click", menuSlide);
