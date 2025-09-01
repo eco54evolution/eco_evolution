@@ -4,57 +4,29 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-<url>
-  <loc>https://www.ecoevolution.fr/</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/service.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/contact.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/renovation.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/isolation.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/rge.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/airair.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/calorifugeage.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/aireau.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.ecoevolution.fr/ballon.html</loc>
-  <lastmod>2025-08-31T17:22:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://www.ecoevolution.fr/</loc>
+    <lastmod>2025-08-31T17:22:43+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ecoevolution.fr/service.html</loc>
+    <lastmod>2025-08-31T17:22:43+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ecoevolution.fr/contact.html</loc>
+    <lastmod>2025-08-31T17:22:43+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ecoevolution.fr/renovation.html</loc>
+    <lastmod>2025-08-31T17:22:43+00:00</lastmod>
+    <priority>0.70</priority>
+  </url>
 
 </urlset>
