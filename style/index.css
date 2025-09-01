@@ -23,7 +23,7 @@
   src: url('../assets/font/Rubik/Rubik-Medium.woff2') format('woff2');
 }
 
-
+/*scroll behaviour pour les liens entre les pages*/
 html{
     font-size:16px;
     font-family: sans-serif;
