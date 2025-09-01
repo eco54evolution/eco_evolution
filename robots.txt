@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.ecoevolution.fr/sitemap.xml
